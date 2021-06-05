@@ -12,11 +12,11 @@
 	function openNavigation() {
 		this.isNavOpened = !this.isNavOpened;
 
-		const navigation = document.getElementById('navigation-wrapper');
+		const navigation = document.getElementById('navigation-overlay');
 		if (this.isNavOpened) {
 			this.src = '/assets/images/icon-close.svg';
 			document.body.style.overflow = 'hidden';
-			navigation.style.display = 'block';
+			navigation.style.display = 'flex';
 		} else {
 			this.src = '/assets/images/icon-hamburger.svg';
 			document.body.style.overflow = 'scroll';
