@@ -1,17 +1,17 @@
 <script>
-    export let isNavOpened;
+    // export let isNavOpened;
     export let menuItems;
 </script>
 
 <!-- {#if isNavOpened} -->
 <div class="navigation-overlay" id="navigation-overlay">
-        <ul>
-            {#each menuItems as menu}
-                <li>
-                    <a href="{menu.link}">{menu.name}</a>
-                </li>
-            {/each}
-        </ul>
+    <ul>
+        {#each menuItems as menu}
+            <li>
+                <a href="{menu.link}">{menu.name}</a>
+            </li>
+        {/each}
+    </ul>
 </div>
 <!-- {/if} -->
 

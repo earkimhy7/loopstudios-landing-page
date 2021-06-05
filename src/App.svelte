@@ -7,6 +7,8 @@
 	export let menuItems: any;
 	export let socialItems: any;
 
+	let y;
+
 	let isNavOpened = false;
 	let src = '/assets/images/icon-hamburger.svg';
 	function openNavigation() {
@@ -27,12 +29,12 @@
 
 <main>
 	<!-- NAVIGATION -->
-	<nav>
+	<nav class:on-scroll={y > 50}>
 		<img class="logo" src="/assets/images/logo.svg" alt="loopstudios logo" />
 		<img on:click={openNavigation} {src} alt="navigation" />
 	</nav>
 
-	<Navigation bind:isNavOpened menuItems={menuItems} />
+	<Navigation menuItems={menuItems} />
 
 	<!-- OVERVIEW -->
 	<section class="overview-section">
@@ -84,13 +86,21 @@
 <style>
 	nav {
 		position: fixed;
-		top: 4.8rem;
-		left: 2.2rem;
-		right: 2.2rem;
+		top: 0;
+		left: 0;
+		right: 0;
 		display: flex;
 		justify-content: space-between;
+		padding: 4.8rem 2.2rem;
 		align-items: center;
 		z-index: 100;
+		background-color: transparent;
+		transition: padding 0.4s ease-out, background-color 0.5s ease-out;
+	}
+
+	nav.on-scroll {
+		padding: 2.4rem 2.2rem;
+		background-color: rgba(0, 0, 0, 0.9);
 	}
 
 	img.logo {
@@ -171,7 +181,7 @@
 		right: 0;
 		left: 0;
 		z-index: 2;
-		background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 50%);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 50%);
 	}
 
 	section.creations-section .creations-item-container .creations-items h3 {
@@ -222,3 +232,5 @@
 		margin: 0 0.75rem;
 	}
 </style>
+
+<svelte:window bind:scrollY={y} />
