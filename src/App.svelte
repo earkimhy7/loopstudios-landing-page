@@ -1,17 +1,38 @@
 <script lang="ts">
+	import Navigation from './Navigation.svelte';
+
 	export let overview: string;
 	export let about: {	title: string; description: string; };
 	export let creations: any;
 	export let menuItems: any;
 	export let socialItems: any;
+
+	let isNavOpened = false;
+	let src = '/assets/images/icon-hamburger.svg';
+	function openNavigation() {
+		this.isNavOpened = !this.isNavOpened;
+
+		const navigation = document.getElementById('navigation-wrapper');
+		if (this.isNavOpened) {
+			this.src = '/assets/images/icon-close.svg';
+			document.body.style.overflow = 'hidden';
+			navigation.style.display = 'block';
+		} else {
+			this.src = '/assets/images/icon-hamburger.svg';
+			document.body.style.overflow = 'scroll';
+			navigation.style.display = 'none';
+		}
+	}
 </script>
 
 <main>
 	<!-- NAVIGATION -->
 	<nav>
-		<img class="logo" src="/assets/images/logo.svg" />
-		<img src="/assets/images/icon-hamburger.svg" />
+		<img class="logo" src="/assets/images/logo.svg" alt="loopstudios logo" />
+		<img on:click={openNavigation} {src} alt="navigation" />
 	</nav>
+
+	<Navigation bind:isNavOpened menuItems={menuItems} />
 
 	<!-- OVERVIEW -->
 	<section class="overview-section">
@@ -20,7 +41,7 @@
 
 	<!-- ABOUT -->
 	<section class="about-section text-center">
-		<img src="/assets/images/mobile/image-interactive.jpg" />
+		<img src="/assets/images/mobile/image-interactive.jpg" alt="interactive" />
 		<h2>{ about.title }</h2>
 		<p>{ about.description }</p>
 	</section>
@@ -32,9 +53,9 @@
 		<div class="creations-item-container">
 			{#each creations.items as item}
 				<div class="creations-items">
-					<img src="{ item.mobileImg }" />
+					<img src="{item.mobileImg}" alt="{item.name}" />
 					<div class="overlay"></div>
-					<h3>{ item.name }</h3>
+					<h3>{item.name}</h3>
 				</div>
 			{/each}
 			<button class="see-all-btn">See all</button>
@@ -43,16 +64,16 @@
 
 	<!-- FOOTER -->
 	<footer class="text-center">
-		<img class="logo" src="/assets/images/logo.svg" />
+		<img class="logo" src="/assets/images/logo.svg" alt="loopstudios logo" />
 		<ul class="menu-list">
 			{#each menuItems as menu}
-				<li><a href="{ menu.link }">{ menu.name }</a></li>
+				<li><a href="{menu.link}">{menu.name}</a></li>
 			{/each}
 		</ul>
 
 		<ul class="social-list">
 			{#each socialItems as social}
-				<li><a href="{ social.link }"><img src="{ social.icon }"></a></li>
+				<li><a href="{social.link}"><img src="{social.icon}" alt="{social.icon}"></a></li>
 			{/each}
 		</ul>
 
@@ -69,6 +90,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		z-index: 100;
 	}
 
 	img.logo {
