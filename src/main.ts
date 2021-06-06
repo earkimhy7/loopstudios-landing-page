@@ -14,35 +14,43 @@ const app = new App({
       items: [
         {
           name: "Deep earth",
-          mobileImg: "/assets/images/mobile/image-deep-earth.jpg"
+          mobileImg: "/assets/images/mobile/image-deep-earth.jpg",
+          desktopImg: "/assets/images/desktop/image-deep-earth.jpg"
         },
         {
           name: "Night arcade",
-          mobileImg: "/assets/images/mobile/image-night-arcade.jpg"
+          mobileImg: "/assets/images/mobile/image-night-arcade.jpg",
+          desktopImg: "/assets/images/desktop/image-night-arcade.jpg"
         },
         {
           name: "Soccer team VR",
-          mobileImg: "/assets/images/mobile/image-soccer-team.jpg"
+          mobileImg: "/assets/images/mobile/image-soccer-team.jpg",
+          desktopImg: "/assets/images/desktop/image-soccer-team.jpg"
         },
         {
           name: "The grid",
-          mobileImg: "/assets/images/mobile/image-grid.jpg"
+          mobileImg: "/assets/images/mobile/image-grid.jpg",
+          desktopImg: "/assets/images/desktop/image-grid.jpg"
         },
         {
           name: "From up above VR",
-          mobileImg: "/assets/images/mobile/image-from-above.jpg"
+          mobileImg: "/assets/images/mobile/image-from-above.jpg",
+          desktopImg: "/assets/images/desktop/image-from-above.jpg"
         },
         {
           name: "Pocket borealis",
-          mobileImg: "/assets/images/mobile/image-pocket-borealis.jpg"
+          mobileImg: "/assets/images/mobile/image-pocket-borealis.jpg",
+          desktopImg: "/assets/images/desktop/image-pocket-borealis.jpg"
         },
         {
           name: "The curiosity",
-          mobileImg: "/assets/images/mobile/image-curiosity.jpg"
+          mobileImg: "/assets/images/mobile/image-curiosity.jpg",
+          desktopImg: "/assets/images/desktop/image-curiosity.jpg"
         },
         {
           name: "Make it fisheye",
-          mobileImg: "/assets/images/mobile/image-fisheye.jpg"
+          mobileImg: "/assets/images/mobile/image-fisheye.jpg",
+          desktopImg: "/assets/images/desktop/image-fisheye.jpg"
         }
       ]
     },
