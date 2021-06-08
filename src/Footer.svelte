@@ -52,7 +52,7 @@
 		margin: 0 0.75rem;
     }
     
-    @media only screen and (min-width: 60rem) {
+    @media only screen and (min-width: 76.9rem) {
         footer {
             padding-bottom: calc(5rem - 3.2rem);
         }

@@ -60,9 +60,11 @@ p {
 .container {
   padding-left: 2.2rem !important;
   padding-right: 2.2rem !important;
+  max-width: 76.8rem;
+  margin: 0 auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 76.9rem) {
   h1 {
     font-size: 6.8rem;
   }
@@ -78,7 +80,6 @@ p {
   .container {
     width: 100%;
     max-width: 1140px;
-    margin: 0 auto;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }

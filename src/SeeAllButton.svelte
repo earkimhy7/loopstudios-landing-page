@@ -17,7 +17,7 @@
 		color: hsl(0, 0%, 0%);
     }
     
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 76.9rem) {
         .see-all-btn {
             margin: 0;
         }

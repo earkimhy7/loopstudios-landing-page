@@ -47,7 +47,7 @@
 
 	<!-- ABOUT -->
 	<section class="container about-section">
-	<MediaQuery query="(min-width: 60rem)" let:matches>
+	<MediaQuery query="(min-width: 76.9rem)" let:matches>
 		{#if matches}
 			<img src="/assets/images/desktop/image-interactive.jpg" alt="interactive" />
 		{:else}
@@ -65,7 +65,7 @@
 	<section class="container creations-section">
 		<div class="creations-header">
 			<h2>{creations.title}</h2>
-			<MediaQuery query="(min-width: 60rem)" let:matches>
+			<MediaQuery query="(min-width: 76.9rem)" let:matches>
 				{#if matches}
 					<SeeAllButton />
 				{/if}
@@ -75,7 +75,7 @@
 		<div class="creations-item-container">
 			{#each creations.items as item}
 				<div class="creations-items">
-				<MediaQuery query="(min-width: 60rem)" let:matches>
+				<MediaQuery query="(min-width: 76.9rem)" let:matches>
 					{#if matches}
 						<img src="{item.desktopImg}" alt="{item.name}" />
 					{:else}
@@ -87,7 +87,7 @@
 				</div>
 			{/each}
 		</div>
-		<MediaQuery query="(min-width: 60rem)" let:matches>
+		<MediaQuery query="(min-width: 76.9rem)" let:matches>
 			{#if !matches}
 				<SeeAllButton />
 			{/if}
@@ -197,7 +197,7 @@
 		z-index: 3;
 	}
 
-	@media only screen and (min-width: 60rem) {
+	@media only screen and (min-width: 76.9rem) {
 		img.logo {
 			height: auto;
 		}
