@@ -1,4 +1,5 @@
 <script>
+	import MenuList from './MenuList.svelte';
     export let menuItems;
     export let socialItems;
 </script>
@@ -6,11 +7,7 @@
 <footer>
     <div class="container footer-container">
         <img class="logo" src="/assets/images/logo.svg" alt="loopstudios logo" />
-        <ul class="menu-list">
-            {#each menuItems as menu}
-                <li><a href="{menu.link}">{menu.name}</a></li>
-            {/each}
-        </ul>
+        <MenuList menuItems={menuItems} />
 
         <ul class="social-list">
             {#each socialItems as social}
@@ -33,14 +30,6 @@
         display: grid;
         place-items: center;
     }
-
-	footer .footer-container ul.menu-list {
-		margin: 2.4rem 0;
-	}
-
-	footer .footer-container ul.menu-list li {
-		margin: 1.2rem 0;
-	}
 
 	footer .footer-container ul.social-list {
 		display: flex;
@@ -65,17 +54,6 @@
                 'menu p';
             grid-row-gap: 3.2rem;
             place-items: start;
-        }
-
-        footer .footer-container ul.menu-list {
-            flex-direction: row;
-            display: flex;
-            margin: 0 -1.4rem;
-            grid-area: menu;
-        }
-
-        footer .footer-container ul.menu-list li {
-            margin: 0 1.4rem;
         }
 
         footer .footer-container ul.social-list {

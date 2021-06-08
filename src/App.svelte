@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MenuList from './MenuList.svelte';
 	import Overview from './Overview.svelte';
 	import Footer from './Footer.svelte';
 	import Navigation from './Navigation.svelte';
@@ -36,7 +37,13 @@
 	<nav class:on-scroll={y > 50}>
 		<div class="container navigation-container">
 			<img class="logo" src="/assets/images/logo.svg" alt="loopstudios logo" />
-			<img on:click={openNavigation} {src} alt="navigation" />
+			<MediaQuery query="(min-width: 76.9rem)" let:matches>
+				{#if matches}
+					<MenuList menuItems={menuItems} />
+				{:else}
+					<img on:click={openNavigation} {src} alt="navigation" />
+				{/if}
+			</MediaQuery>
 		</div>
 	</nav>
 
